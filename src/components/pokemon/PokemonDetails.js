@@ -44,7 +44,7 @@ const PokemonDetails = (props) => {
         eggGroup:'',
         genderRatioMale:'',
         genderRatioFemale:'',
-        hatchStep:'',
+        hatchSteps:'',
         catchRate: '',
         description:''
     });
@@ -92,19 +92,19 @@ const PokemonDetails = (props) => {
                         .map(s => s.charAt(0)
                             .toUpperCase()+ s.substring(1))
                         .join(" ")
-                });
+                }).join(", ");
                 const evs = res.data.stats.filter(stat => {
                     if(stat.effort > 0) {
                         return true;
                     }
                     return false;
                 }).map(stat=>{
-                    return `${stat.effort} ${stat.stat.name}`
-                        .toLowerCase()
+                    return `${stat.effort} ${stat.stat.name.toLowerCase()
                         .split('-')
                         .map(s => s.charAt(0)
                             .toUpperCase()+ s.substring(1))
-                        .join(" ")
+                        .join(" ")}`
+
                 })
                     .join(", ");
                     setPokeMonDetail({
@@ -172,7 +172,7 @@ const PokemonDetails = (props) => {
     }, [props.match.params.pokemonIndex]);
 
   return <div className='col'>
-      <div className="card">
+      <div className="card ">
           <div className="card-header">
               <div className="row">
                   <div className="col-5">
@@ -344,7 +344,7 @@ const PokemonDetails = (props) => {
                   Data
               </h5>
               <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-12">
                       <div className="row">
                           <div className="col-md-5">
                               <h6 className="float-right">Height:</h6>
@@ -360,6 +360,87 @@ const PokemonDetails = (props) => {
 
                           <div className="col-md-7">
                               <h6 className="float-left">{pokemonsDetail.weight} lbs.</h6>
+                          </div>
+                      </div>
+                      <div className="row">
+                          <div className="col-md-5">
+                              <h6 className="float-right">Cache Rate:</h6>
+                          </div>
+
+                          <div className="col-md-7">
+                              <h6 className="float-left">{species.catchRate} %.</h6>
+                          </div>
+                      </div>
+                      <div className="row">
+                          <div className="col-md-5">
+                              <h6 className="float-right">Gender Ratio:</h6>
+                          </div>
+
+                          <div className="col-md-7">
+                              <div className="progress">
+                                  <div
+                                      className="progress-bar"
+                                      role="progressbar"
+                                      style={ {
+                                          width: `${ species.genderRatioFemale }%`,
+                                          backgroundColor: '#c2185b'
+                                      } }
+                                      aria-valuenow="15"
+                                      aria-valuemin="0"
+                                      aria-valuemax="100"
+                                  >
+                                      <small>{ species.genderRatioFemale }</small>
+                                  </div>
+                                  <div
+                                      className="progress-bar"
+                                      role="progressbar"
+                                      style={ {
+                                          width: `${ species.genderRatioMale }%`,
+                                          backgroundColor: '#1976d2'
+                                      } }
+                                      aria-valuenow="30"
+                                      aria-valuemin="0"
+                                      aria-valuemax="100"
+                                  >
+                                      <small>{ species.genderRatioMale }</small>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div className="row">
+                          <div className="col-md-5">
+                              <h6 className="float-right">Egg Groups:</h6>
+                          </div>
+
+                          <div className="col-md-7">
+                              <h6 className="float-left">{species.eggGroup}</h6>
+                          </div>
+                      </div>
+                      <div className="row">
+                          <div className="col-md-5">
+                              <h6 className="float-right">Hatch Steps:</h6>
+                          </div>
+
+                          <div className="col-md-7">
+                              <h6 className="float-left">{species.hatchSteps}</h6>
+                          </div>
+                      </div>
+                      <div className="row">
+                          <div className="col-md-5">
+                              <h6 className="float-right">Abilities:</h6>
+                          </div>
+
+                          <div className="col-md-7">
+                              <h6 className="float-left">{pokemonsDetail.abilities}</h6>
+                          </div>
+                      </div>
+                      <div className="row">
+                          <div className="col-md-5">
+                              <h6 className="float-right">EVS:</h6>
+                          </div>
+
+                          <div className="col-md-7">
+                              <h6 className="float-left">{pokemonsDetail.evs}</h6>
                           </div>
                       </div>
                   </div>

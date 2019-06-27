@@ -43,7 +43,7 @@ const PokemonCard = ( props ) => {
 
     return <React.Fragment>
         <div key={ props.pokemon.name } className='col-md-3 col-sm-3 mb-5'>
-            <StyledLink to={`pokemon/details/${pokemonIndex}`}>
+            <StyledLink to={`/pokemon/details/${pokemonIndex}`}>
                 <Card className="card" onMouseEnter={props.onMouseEnter.bind(this, pokemonIndex)}>
                     <h5 className="card-header">{ pokemonIndex }
                     </h5>

@@ -3,16 +3,15 @@ import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import PokeBoard from './components/layout/PokeBoard';
-import PokemonDetails from './components/pokemon/PokemonDetails';
+import PokemonMovesAndEvolution from './components/pokemon/PokemonMovesandEvolution';
 import Main from "./components/layout/Main";
 
 function App() {
     return <BrowserRouter>
         <Main>
                 <Switch>
+                    <Route exact path='/pokemon/details/:pokemonIndex' component={ PokemonMovesAndEvolution }/>
                     <Route path='/' component={ PokeBoard }/>
-                    {/*<Route exact path='/pokemon/:pokemonIndex' component={ PokeBoard }/>*/}
-                    <Route exact path='/pokemon/details/:pokemonIndex' component={ PokemonDetails }/>
                     <Redirect to="/" />
                 </Switch>
         </Main>

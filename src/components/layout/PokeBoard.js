@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom';
 import PokemonList from '../pokemon/PokemonList'
 import PokemonDetails from '../pokemon/PokemonDetails'
 import PokemonContext from '../context/pokemonContext'
+import PokemonWaiting from "../pokemon/PokemonWaiting";
+
 const PokeBoard = (props) => {
     const mouseEnterHandler = (pokemonIndex) => {
         const formalUrl = props.location.pathname.split('/')[props.location.pathname.split('/').length - 1];
@@ -16,10 +18,14 @@ const PokeBoard = (props) => {
                 <PokemonList/>
             </div>
             <div className="col-md-5">
+                    <PokemonWaiting  />
                 <Route
+                    exact
                     path={props.match.path + 'pokemon/:pokemonIndex'}
                     render={(props) => <PokemonDetails {...props} />}
                 />
+
+
             </div>
         </PokemonContext.Provider>
     </div>;

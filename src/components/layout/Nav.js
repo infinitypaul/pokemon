@@ -1,9 +1,10 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Nav = ( ) => (
     <React.Fragment>
         <nav className="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-            <a className="navbar-brand" href="jjdj.php">Pokemon</a>
+            <Link className="navbar-brand" to="/">Pokemon</Link>
         </nav>
     </React.Fragment>
 );
