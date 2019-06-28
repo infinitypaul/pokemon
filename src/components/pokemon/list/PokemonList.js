@@ -12,20 +12,21 @@ const PokemonList = ( props ) => {
     const [pokemons, setPokeMon] = useState('');
 
     const pokemonCon = useContext(pokemonContext);
-
+    async function fetchPokemon() {
+        await axios.get(url).then((result)=>{
+            setPokeMon(result.data);
+        })
+    }
      useEffect(() => {
-         async function fetchPokemon() {
-             await axios.get(url).then((result)=>{
-                 console.log(result.data);
-                 setPokeMon(result.data);
-             })
-         }
-        console.log('me');
+
          fetchPokemon();
     }, []);
-
     const typeHandler = (event) => {
          let typeProp = event.target.value.toLowerCase();
+         if(typeProp === 'all'){
+             fetchPokemon();
+             return;
+         }
         async function fetchPokemonType() {
             await axios.get(typeUrl+typeProp).then((result)=>{
                 let pokemons = {
@@ -38,7 +39,6 @@ const PokemonList = ( props ) => {
                     name: pokemon.pokemon.name,
                     url: pokemon.pokemon.url
                 }));
-                console.log(pokemons);
                 setPokeMon(pokemons);
             })
         }

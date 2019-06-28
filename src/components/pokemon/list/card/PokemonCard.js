@@ -32,12 +32,10 @@ const StyledLink = styled(Link)`
     }
 `;
 const PokemonCard = ( props ) => {
-    //console.log(props.pokemon);
     const [imageLoading, setImageLoading] = useState(true);
     const [pokemonIndex, setPokemonIndex] = useState('');
 
     useEffect(() => {
-        console.log('component did mount');
         setPokemonIndex(props.pokemon.url.split('/')[props.pokemon.url.split('/').length - 2]);
     }, [props.pokemon.url]);
 

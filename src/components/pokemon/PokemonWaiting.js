@@ -3,9 +3,8 @@ import classes from './PokemonWaiting.module.css';
 
 
 const PokemonWaiting = (props) => {
-    console.log(props);
     return (
-        <div className={classes.eevee} style={{ display: 'none'}}>
+        <div className={classes.eevee} style={{ display: (props.location.pathname === '/') ? 'block': 'none'}}>
             <div className={classes.body}>
                 <div className={classes.head}>
                     <div className={classes.ears}>

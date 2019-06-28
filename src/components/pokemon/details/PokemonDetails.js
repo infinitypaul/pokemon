@@ -3,27 +3,8 @@ import axios from "axios/index";
 
 import PokemonData from "./data/PokemonData";
 import PokemonStat from "./data/PokemonStat";
+import {TYPE_COLORS} from '../../../shared/utility'
 
-const TYPE_COLORS = {
-    bug: 'B1C12E',
-    dark: '4F3A2D',
-    dragon: '755EDF',
-    electric: 'FCBC17',
-    fairy: 'F4B1F4',
-    fighting: '823551D',
-    fire: 'E73B0C',
-    flying: 'A3B3F7',
-    ghost: '6060B2',
-    grass: '74C236',
-    ground: 'D3B357',
-    ice: 'A3E7FD',
-    normal: 'C8C4BC',
-    poison: '934594',
-    psychic: 'ED4882',
-    rock: 'B9A156',
-    steel: 'B5B5C3',
-    water: '3295F6'
-};
 
 const PokemonDetails = (props) => {
     const [pokemonsDetail, setPokeMonDetail] = useState({
@@ -42,15 +23,8 @@ const PokemonDetails = (props) => {
         weight:'',
         abilities:'',
         evs:'',
-        themeColor: '#EF5350'
-    });
-    const [species, setSpecies] = useState({
-        eggGroup:'',
-        genderRatioMale:'',
-        genderRatioFemale:'',
-        hatchSteps:'',
-        catchRate: '',
-        description:''
+        themeColor: '#EF5350',
+        url:''
     });
     useEffect(() => {
         const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${props.match.params.pokemonIndex}`;
@@ -80,6 +54,8 @@ const PokemonDetails = (props) => {
                         case 'special-defense':
                             specialDefence = stat['base_stat'];
                             break;
+                        default:
+                            return null;
 
                     }
                 });
@@ -109,6 +85,7 @@ const PokemonDetails = (props) => {
 
                 })
                     .join(", ");
+                const url = res.data.species.url;
                     setPokeMonDetail({
                         name: res.data.name,
                         imageUrl: res.data.sprites.front_default,
@@ -125,52 +102,11 @@ const PokemonDetails = (props) => {
                         weight,
                         abilities,
                         evs,
-                        themeColor
+                        themeColor,
+                        url
                     });
 
-                     axios
-                        .get(res.data.species.url)
-                        .then((result)=>{
-                            // console.log(result.data);
-                            let description = '';
-                            result.data.flavor_text_entries.some(flavor => {
-                                if(flavor.language.name === 'en'){
-                                    description = flavor.flavor_text;
-                                    return;
-                                }
-                            });
-                            const femaleRate = result.data['gender_rate'];
-                            const genderRatioFemale = 12.5 * femaleRate;
-                            const genderRatioMale = 12.5 * (8 - femaleRate);
-
-                            const catchRate = Math.round((100/225) * result.data['capture_rate']);
-
-                            const eggGroup = result.data['egg_groups'].map(group=>{
-                                return group.name
-                                    .toLowerCase()
-                                    .split('-')
-                                    .map(s => s.charAt(0)
-                                        .toUpperCase()+ s.substring(1))
-                                    .join(" ")
-                            }).join(", ");
-
-                            const hatchSteps = 255 * (result.data['hatch_counter'] + 1);
-
-                            setSpecies({
-                                description,
-                                genderRatioFemale,
-                                genderRatioMale,
-                                eggGroup,
-                                catchRate,
-                                hatchSteps,
-                            })
-                        })
-
             });
-
-
-
-
 
         }
         fetchPokemonDetails();
@@ -195,7 +131,8 @@ const PokemonDetails = (props) => {
                                           color: 'white'
                                       } }
                                   >
-                                      { type.toLowerCase()
+                                      { type
+                                          .toLowerCase()
                                           .split('-')
                                           .map(s => s.charAt(0)
                                               .toUpperCase() + s.substring(1))
@@ -211,13 +148,9 @@ const PokemonDetails = (props) => {
                   () => (
                       <React.Fragment>
                           <PokemonStat
-                              pokemon={pokemonsDetail}
-                              specy={species} />
-                          />
+                              pokemon={pokemonsDetail} />
                           <hr/>
-                          <PokemonData
-                              pokemon={pokemonsDetail}
-                              specy={species} />
+                          <PokemonData url={pokemonsDetail.url} />
                       </React.Fragment>
                   ),
                   [pokemonsDetail]

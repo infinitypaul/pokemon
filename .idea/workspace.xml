@@ -4,16 +4,13 @@
     <list default="true" id="2bfded7c-7244-44c3-8d02-ff865662c8c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/pokemonContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/pokemonContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/layout/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/layout/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/PokeBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/pokemon/PokeBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/list/card/PokemonCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/details/PokemonDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/list/PokemonList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonMovesandEvolution.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/details/PokemonMovesandEvolution.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonMovesandEvolution.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pokemon/filtering.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/list/filter/filtering.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/PokemonWaiting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/PokemonWaiting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/details/PokemonDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/details/PokemonDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonStat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonStat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/list/PokemonList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/list/PokemonList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pokemon/list/card/PokemonCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pokemon/list/card/PokemonCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/pokemon/PokeBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/pokemon/PokeBoard.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,65 +23,29 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/PokemonMovesandEvolution.js">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+            <state relative-caret-position="-92">
+              <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="3" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
-                <element signature="e#3691#4528#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/PokemonDetails.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-928">
-              <caret line="176" column="8" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/data/PokemonMove.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-262">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="34" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/data/PokemonEvolution.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#174#308#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/pokemon/list/PokemonList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1508">
-              <caret line="57" column="18" lean-forward="true" selection-start-line="55" selection-start-column="20" selection-end-line="57" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#72#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,10 +54,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/pokemon/list/filter/filtering.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="54" />
+            <state relative-caret-position="260">
+              <caret line="10" column="38" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="38" />
               <folding>
-                <marker date="1561725649459" expanded="true" signature="493:885" ph="..." />
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1561736970592" expanded="true" signature="493:885" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/container/pokemon/PokeBoard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pokemon/list/PokemonList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#72#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/container/layout/Nav.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>consol</find>
       <find>props</find>
       <find>match</find>
       <find>setPokeMonDetail</find>
@@ -132,6 +129,10 @@
       <find>imageUrl</find>
       <find>ImageUrl</find>
       <find>`</find>
+      <find>hre</find>
+      <find>consol</find>
+      <find>console</find>
+      <find>conso</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,10 +149,8 @@
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/components/pokemon/pokemonMoves.module.css" />
         <option value="$PROJECT_DIR$/src/components/layout/Nav.js" />
-        <option value="$PROJECT_DIR$/src/components/pokemon/PokemonWaiting.js" />
         <option value="$PROJECT_DIR$/src/components/pokemon/PokemonWaiting.module.css" />
         <option value="$PROJECT_DIR$/src/components/pokemon/PokemonMovesandEvolution.module.css" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/shared/utility.js" />
         <option value="$PROJECT_DIR$/src/components/pokemon/filtering.js" />
         <option value="$PROJECT_DIR$/src/components/pokemon/PokemonList.js" />
@@ -161,15 +160,21 @@
         <option value="$PROJECT_DIR$/src/hoc/layout/PokeBoard.js" />
         <option value="$PROJECT_DIR$/src/context/pokemonContext.js" />
         <option value="$PROJECT_DIR$/src/hoc/pokemon/PokeBoard.js" />
-        <option value="$PROJECT_DIR$/src/components/pokemon/list/PokemonList.js" />
-        <option value="$PROJECT_DIR$/src/components/pokemon/details/PokemonDetails.js" />
-        <option value="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonStat.js" />
-        <option value="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonData.js" />
-        <option value="$PROJECT_DIR$/src/components/pokemon/list/filter/filtering.js" />
         <option value="$PROJECT_DIR$/src/components/pokemon/PokemonMovesandEvolution.js" />
         <option value="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonMove.js" />
         <option value="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonEvolution.js" />
         <option value="$PROJECT_DIR$/src/components/pokemon/details/PokemonMovesandEvolution.js" />
+        <option value="$PROJECT_DIR$/src/hooks/capital.js" />
+        <option value="$PROJECT_DIR$/src/components/pokemon/list/card/PokemonCard.js" />
+        <option value="$PROJECT_DIR$/src/components/pokemon/details/PokemonDetails.js" />
+        <option value="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonStat.js" />
+        <option value="$PROJECT_DIR$/src/components/pokemon/details/data/PokemonData.js" />
+        <option value="$PROJECT_DIR$/src/container/pokemon/PokeBoard.js" />
+        <option value="$PROJECT_DIR$/src/components/pokemon/PokemonWaiting.js" />
+        <option value="$PROJECT_DIR$/src/container/layout/Nav.js" />
+        <option value="$PROJECT_DIR$/src/components/pokemon/list/filter/filtering.js" />
+        <option value="$PROJECT_DIR$/src/components/pokemon/list/PokemonList.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -229,8 +234,29 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="pokemon" type="462c0819:PsiDirectoryNode" />
-              <item name="details" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokemon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokemon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="container" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pokemon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="container" type="462c0819:PsiDirectoryNode" />
+              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -303,31 +329,31 @@
       <option name="presentableId" value="Default" />
       <updated>1561488505044</updated>
       <workItem from="1561488506946" duration="969000" />
-      <workItem from="1561493764422" duration="80812000" />
+      <workItem from="1561493764422" duration="87801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81781000" />
+    <option name="totallyTimeSpent" value="88770000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" order="0" sideWeight="0.5059761" side_tool="true" weight="0.2074392" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49402392" visible="true" weight="0.2074392" />
+      <window_info id="npm" order="0" sideWeight="0.50617284" side_tool="true" weight="0.2074392" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49382716" visible="true" weight="0.2074392" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" />
       <window_info anchor="bottom" id="RNConsole" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49928468" visible="true" weight="0.32923833" />
+      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49928468" weight="0.34053367" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5007153" side_tool="true" weight="0.32923833" />
       <window_info anchor="bottom" id="Database Changes" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="IDEtalk Messages" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.38329238" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.38246506" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -374,37 +400,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/container/layout/Nav.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="68" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pokemon/PokemonWaiting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pokemon/PokemonWaiting.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="3961" selection-start-line="3961" selection-start-column="2" selection-end-line="3968" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="74" selection-start-line="1" selection-start-column="74" selection-end-line="1" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -442,40 +441,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/container/pokemon/PokeBoard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pokemon/list/card/PokemonCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1482">
-          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="111" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/data/PokemonStat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="146" column="50" selection-start-line="146" selection-start-column="50" selection-end-line="146" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/data/PokemonData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pokemon/PokemonMovesandEvolution.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -483,30 +448,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pokemon/list/PokemonList.js">
+    <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/PokemonMovesandEvolution.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1508">
-          <caret line="57" column="18" lean-forward="true" selection-start-line="55" selection-start-column="20" selection-end-line="57" selection-end-column="18" />
+        <state relative-caret-position="196">
+          <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
           <folding>
-            <element signature="e#0#72#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#3691#4528#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pokemon/list/filter/filtering.js">
+    <entry file="file://$PROJECT_DIR$/src/hooks/capital.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="54" />
-          <folding>
-            <marker date="1561725649459" expanded="true" signature="493:885" ph="..." />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/data/PokemonMove.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-262">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="34" selection-end-column="14" />
+        <state relative-caret-position="78">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -515,32 +478,116 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/data/PokemonEvolution.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        <state relative-caret-position="160">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pokemon/list/card/PokemonCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#174#308#0" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/PokemonDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-928">
-          <caret line="176" column="8" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="39" />
+        <state relative-caret-position="124">
+          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#688#1040#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/PokemonMovesandEvolution.js">
+    <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/data/PokemonStat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+        <state relative-caret-position="276">
+          <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
-            <element signature="e#3691#4528#0" />
+            <element signature="e#177#551#0" />
+            <element signature="e#1997#3041#0" />
+            <element signature="e#3062#4105#0" />
+            <element signature="e#4126#5182#0" />
+            <element signature="e#5203#6265#0" />
+            <element signature="e#6286#7341#0" />
+            <element signature="e#7579#7947#0" />
+            <element signature="e#7968#8338#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pokemon/details/data/PokemonData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-173">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pokemon/PokemonWaiting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/layout/Nav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pokemon/list/PokemonList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pokemon/list/filter/filtering.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1561736970592" expanded="true" signature="493:885" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/pokemon/PokeBoard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>

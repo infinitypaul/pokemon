@@ -18,7 +18,7 @@ const PokeBoard = (props) => {
                 <PokemonList/>
             </div>
             <div className="col-md-5">
-                    <PokemonWaiting  />
+                    <PokemonWaiting {...props}  />
                 <Route
                     exact
                     path={props.match.path + 'pokemon/:pokemonIndex'}
