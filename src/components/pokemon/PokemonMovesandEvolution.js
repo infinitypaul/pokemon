@@ -31,7 +31,6 @@ const PokemonMovesAndEvolution = props => {
         evoChains: []
     });
     const pokemonMovesUrl = `https://pokeapi.co/api/v2/pokemon/${props.match.params.pokemonIndex}`;
-    const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${props.match.params.pokemonIndex}`;
     async function fetchPokemonDetails() {
         const pokemonRes =  await axios.get(pokemonMovesUrl);
         const name = pokemonRes.data.name;
@@ -47,18 +46,16 @@ const PokemonMovesAndEvolution = props => {
         let evoChains = [];
 
 
-        const res = await axios.get(pokemonSpeciesUrl);
+        const res = await axios.get(pokemonRes.data.species.url);
 
        await axios.get(res.data.evolution_chain.url)
             .then((response) => {
-                //console.log(response.data.chain);
                 let evolve = response.data.chain;
 
 
                 do {
                     let evoDetails = evolve.evolution_details[0];
 
-                    //if(typeof evoDetails !== "undefined"){
                     evoChains.push({
                         "species_name": evolve.species.name,
                         "species_url": evolve.species.url.split('/')[evolve.species.url.split('/').length - 2],
@@ -81,8 +78,7 @@ const PokemonMovesAndEvolution = props => {
                             });
                         }
                     }
-                    //console.log(evoDetails);
-                    //}
+
 
 
                     evolve = evolve.evolves_to[0];

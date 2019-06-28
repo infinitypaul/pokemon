@@ -39,6 +39,7 @@ const PokemonDetails = (props) => {
         weight:'',
         abilities:'',
         evs:'',
+        themeColor: '#EF5350'
     });
     const [species, setSpecies] = useState({
         eggGroup:'',
@@ -50,7 +51,6 @@ const PokemonDetails = (props) => {
     });
     useEffect(() => {
         const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${props.match.params.pokemonIndex}`;
-        const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${props.match.params.pokemonIndex}`;
 
         async function fetchPokemonDetails() {
             await axios
@@ -80,11 +80,10 @@ const PokemonDetails = (props) => {
 
                     }
                 });
-                    console.log(res.data.weight);
                 const height = Math.round((res.data.height * 0.328084 + 0.00001) * 100) / 100;
                 const weight = Math.round((res.data.weight * 0.220462 + 0.00001) * 100) / 100;
                 const types = res.data.types.map(type => type.type.name);
-                    console.log(weight);
+                const themeColor = `${TYPE_COLORS[types[types.length - 1]]}`;
                 const abilities = res.data.abilities.map(ability => {
                     return ability.ability.name
                         .toLowerCase()
@@ -122,50 +121,53 @@ const PokemonDetails = (props) => {
                         height,
                         weight,
                         abilities,
-                        evs
+                        evs,
+                        themeColor
                     });
+
+                     axios
+                        .get(res.data.species.url)
+                        .then((result)=>{
+                            // console.log(result.data);
+                            let description = '';
+                            result.data.flavor_text_entries.some(flavor => {
+                                if(flavor.language.name === 'en'){
+                                    description = flavor.flavor_text;
+                                    return;
+                                }
+                            });
+                            const femaleRate = result.data['gender_rate'];
+                            const genderRatioFemale = 12.5 * femaleRate;
+                            const genderRatioMale = 12.5 * (8 - femaleRate);
+
+                            const catchRate = Math.round((100/225) * result.data['capture_rate']);
+
+                            const eggGroup = result.data['egg_groups'].map(group=>{
+                                return group.name
+                                    .toLowerCase()
+                                    .split('-')
+                                    .map(s => s.charAt(0)
+                                        .toUpperCase()+ s.substring(1))
+                                    .join(" ")
+                            }).join(", ");
+
+                            const hatchSteps = 255 * (result.data['hatch_counter'] + 1);
+
+                            setSpecies({
+                                description,
+                                genderRatioFemale,
+                                genderRatioMale,
+                                eggGroup,
+                                catchRate,
+                                hatchSteps,
+                            })
+                        })
 
             });
 
 
 
-            await axios
-                .get(pokemonSpeciesUrl)
-                .then((result)=>{
-                   // console.log(result.data);
-                    let description = '';
-                        result.data.flavor_text_entries.some(flavor => {
-                            if(flavor.language.name === 'en'){
-                                description = flavor.flavor_text;
-                                return;
-                            }
-                    });
-                    const femaleRate = result.data['gender_rate'];
-                    const genderRatioFemale = 12.5 * femaleRate;
-                    const genderRatioMale = 12.5 * (8 - femaleRate);
 
-                    const catchRate = Math.round((100/225) * result.data['capture_rate']);
-
-                    const eggGroup = result.data['egg_groups'].map(group=>{
-                        return group.name
-                            .toLowerCase()
-                            .split('-')
-                            .map(s => s.charAt(0)
-                                .toUpperCase()+ s.substring(1))
-                            .join(" ")
-                    }).join(", ");
-
-                    const hatchSteps = 255 * (result.data['hatch_counter'] + 1);
-
-                    setSpecies({
-                        description,
-                        genderRatioFemale,
-                        genderRatioMale,
-                        eggGroup,
-                        catchRate,
-                        hatchSteps,
-                    })
-            })
 
         }
         fetchPokemonDetails();
@@ -203,7 +205,11 @@ const PokemonDetails = (props) => {
           <div className="card-body">
               <div className="row align-items-center">
                   <div className="col-md-3">
-                      <img src={ pokemonsDetail.imageUrl } className='card-img-top rounded mx-auto mt-2' alt=""/>
+                      <img
+                          src={ pokemonsDetail.imageUrl }
+                          className='card-img-top rounded mx-auto mt-2'
+                          onError={ (e)=> console.log(e)  }
+                          alt={pokemonsDetail.name} />
                   </div>
                   <div className="col-md-9">
                       <h4 className="mx-auto">
@@ -222,7 +228,8 @@ const PokemonDetails = (props) => {
                                       className="progress-bar"
                                       role="progressBar"
                                       style={ {
-                                          width: `${ pokemonsDetail.stats.hp }%`
+                                          width: `${ pokemonsDetail.stats.hp }%`,
+                                          backgroundColor: `#${pokemonsDetail.themeColor}`
                                       } }
                                       aria-valuenow="25"
                                       aria-valuemin="0"
@@ -241,7 +248,8 @@ const PokemonDetails = (props) => {
                                       className="progress-bar"
                                       role="progressBar"
                                       style={ {
-                                          width: `${ pokemonsDetail.stats.attack }%`
+                                          width: `${ pokemonsDetail.stats.attack }%`,
+                                          backgroundColor: `#${pokemonsDetail.themeColor}`
                                       } }
                                       aria-valuenow="25"
                                       aria-valuemin="0"
@@ -260,7 +268,8 @@ const PokemonDetails = (props) => {
                                       className="progress-bar"
                                       role="progressBar"
                                       style={{
-                                          width: `${ pokemonsDetail.stats.defence }%`
+                                          width: `${ pokemonsDetail.stats.defence }%`,
+                                          backgroundColor: `#${pokemonsDetail.themeColor}`
                                       }}
                                       aria-valuenow="25"
                                       aria-valuemin="0"
@@ -279,7 +288,8 @@ const PokemonDetails = (props) => {
                                       className="progress-bar"
                                       role="progressBar"
                                       style={ {
-                                          width: `${pokemonsDetail.stats.specialAttack}%`
+                                          width: `${pokemonsDetail.stats.specialAttack}%`,
+                                          backgroundColor: `#${pokemonsDetail.themeColor}`
                                       } }
                                       aria-valuenow="25"
                                       aria-valuemin="0"
@@ -298,7 +308,8 @@ const PokemonDetails = (props) => {
                                       className="progress-bar"
                                       role="progressBar"
                                       style={ {
-                                          width: `${ pokemonsDetail.stats.specialDefence }%`
+                                          width: `${ pokemonsDetail.stats.specialDefence }%`,
+                                          backgroundColor: `#${pokemonsDetail.themeColor}`
                                       } }
                                       aria-valuenow="25"
                                       aria-valuemin="0"
@@ -317,7 +328,8 @@ const PokemonDetails = (props) => {
                                       className="progress-bar"
                                       role="progressBar"
                                       style={ {
-                                          width: `${ pokemonsDetail.stats.speed }%`
+                                          width: `${ pokemonsDetail.stats.speed }%`,
+                                          backgroundColor: `#${pokemonsDetail.themeColor}`
                                       } }
                                       aria-valuenow="25"
                                       aria-valuemin="0"

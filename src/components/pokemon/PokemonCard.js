@@ -55,16 +55,18 @@ const PokemonCard = ( props ) => {
                     <Sprite
                         className="card-img-top rounded mx-auto mt-2"
                         onLoad={ () => setImageLoading(false) }
-                        src={ "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/" + pokemonIndex + ".png" }/>
+                        onError={ (e)=> e.target.src='https://via.placeholder.com/120x120.png?text=No+Image'  }
+                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`}/>
 
                     <div className='card-body mx-auto'>
                         <h6 className="card-title">
                             { props.pokemon.name
                                 .toLowerCase()
-                                .split(" ")
-                                .map(
-                                    letter => letter.charAt(0).toUpperCase() + letter.substring(1)
-                                ).join("") }
+                                .split('-')
+                                .map(s => s.charAt(0)
+                                    .toUpperCase()+ s.substring(1))
+                                .join(" ")
+                            }
                         </h6>
                     </div>
                 </Card>
