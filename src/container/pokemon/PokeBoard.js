@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import PokemonList from '../pokemon/PokemonList'
-import PokemonDetails from '../pokemon/PokemonDetails'
-import PokemonContext from '../context/pokemonContext'
-import PokemonWaiting from "../pokemon/PokemonWaiting";
+import PokemonList from '../../components/pokemon/list/PokemonList'
+import PokemonDetails from '../../components/pokemon/details/PokemonDetails'
+import PokemonContext from '../../context/pokemonContext'
+import PokemonWaiting from "../../components/pokemon/PokemonWaiting";
 
 const PokeBoard = (props) => {
     const mouseEnterHandler = (pokemonIndex) => {
@@ -13,7 +13,7 @@ const PokeBoard = (props) => {
         }
     };
     return <div className="row">
-        <PokemonContext.Provider value={{status: false, mouseEnter: mouseEnterHandler}}>
+        <PokemonContext.Provider value={{mouseEnter: mouseEnterHandler}}>
             <div className="col-md-7">
                 <PokemonList/>
             </div>
@@ -24,8 +24,6 @@ const PokeBoard = (props) => {
                     path={props.match.path + 'pokemon/:pokemonIndex'}
                     render={(props) => <PokemonDetails {...props} />}
                 />
-
-
             </div>
         </PokemonContext.Provider>
     </div>;

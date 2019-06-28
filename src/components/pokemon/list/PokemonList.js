@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
-import axios from 'axios';
-import pokemonContext from '../context/pokemonContext';
+import axios from 'axios/index';
+import pokemonContext from '../../../context/pokemonContext';
 
-import PokemonCard from './PokemonCard'
-import Filtering from "./filtering";
+import PokemonCard from './card/PokemonCard'
+import Filtering from "./filter/filtering";
 
 
 const PokemonList = ( props ) => {

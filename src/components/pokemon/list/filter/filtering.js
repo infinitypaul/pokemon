@@ -1,11 +1,11 @@
 import React  from 'react'
-import {TYPE_COLORS} from '../../shared/utility'
+import {TYPE_COLORS} from '../../../../shared/utility'
 
 const Filtering = (props) => {
     return (
         <div className="mb-5 align-items-center">
             <div className="form-group">
-                <label htmlFor="exampleFormControlSelect1">Example select</label>
+                <label htmlFor="exampleFormControlSelect1">Filter Pokemon By Types</label>
 
                 <select className="form-control" id="exampleFormControlSelect1" onChange={props.typeHandler}>
                     <option value="all">All</option>

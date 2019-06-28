@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import PokeBoard from './components/layout/PokeBoard';
-import PokemonMovesAndEvolution from './components/pokemon/PokemonMovesandEvolution';
-import Main from "./components/layout/Main";
+import PokeBoard from './container/pokemon/PokeBoard';
+import PokemonMovesAndEvolution from './components/pokemon/details/PokemonMovesandEvolution';
+import Main from "./container/layout/Main";
 
 function App() {
     return <BrowserRouter>
