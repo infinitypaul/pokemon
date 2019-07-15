@@ -1,20 +1,24 @@
 import React, { useState, useEffect, useMemo, useContext } from 'react';
-import axios from 'axios/index';
+import axios from '../../../axios-pokemon';
 import pokemonContext from '../../../context/pokemonContext';
 
 import PokemonCard from './card/PokemonCard'
 import Filtering from "./filter/filtering";
-
+import Pagination from "../../../container/layout/Pagination";
 
 const PokemonList = ( props ) => {
-    const url = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20';
-    const typeUrl = 'https://pokeapi.co/api/v2/type/';
     const [pokemons, setPokeMon] = useState('');
 
     const pokemonCon = useContext(pokemonContext);
-    async function fetchPokemon() {
+    async function fetchPokemon(url='pokemon?offset=0&limit=12') {
         await axios.get(url).then((result)=>{
-            setPokeMon(result.data);
+            let pokemons = {
+                count : result.data.count,
+                next:result.data.next === null ? result.data.next : result.data.next.split('/')[5],
+                previous:result.data.previous === null ? result.data.previous : result.data.previous.split('/')[5],
+                results : result.data.results
+            };
+            setPokeMon(pokemons);
         })
     }
      useEffect(() => {
@@ -28,7 +32,7 @@ const PokemonList = ( props ) => {
              return;
          }
         async function fetchPokemonType() {
-            await axios.get(typeUrl+typeProp).then((result)=>{
+            await axios.get('type/'+typeProp).then((result)=>{
                 let pokemons = {
                     count : result.data.pokemon.length,
                     next:null,
@@ -44,6 +48,8 @@ const PokemonList = ( props ) => {
         }
         fetchPokemonType()
      };
+
+
     return (
         <React.Fragment>
             <Filtering typeHandler={typeHandler} />
@@ -56,6 +62,7 @@ const PokemonList = ( props ) => {
                     ),
                     [pokemons, pokemonCon]
                 )}
+                <Pagination next={pokemons.next} previous={pokemons.previous} onClick={fetchPokemon} {...props}/>
             </div>
         </React.Fragment>
     );

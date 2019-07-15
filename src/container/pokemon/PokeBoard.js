@@ -15,14 +15,15 @@ const PokeBoard = (props) => {
     return <div className="row">
         <PokemonContext.Provider value={{mouseEnter: mouseEnterHandler}}>
             <div className="col-md-7">
-                <PokemonList/>
+                <PokemonList {...props}/>
             </div>
-            <div className="col-md-5">
+            <div className="col-md-5" >
+
                     <PokemonWaiting {...props}  />
                 <Route
                     exact
                     path={props.match.path + 'pokemon/:pokemonIndex'}
-                    render={(props) => <PokemonDetails {...props} />}
+                    render={(props) => <PokemonDetails {...props}  />}
                 />
             </div>
         </PokemonContext.Provider>

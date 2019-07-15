@@ -3,7 +3,7 @@ import React from 'react';
 const PokemonStat = props => {
     return (
         <React.Fragment>
-        <div className="card-body">
+        <div className="card-body ">
             <div className="row align-items-center">
                 <div className="col-md-3">
                     <img

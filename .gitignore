@@ -23,3 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea
+
+.firebaserc
+database.rules.json
+firebase.json
+.firebase

@@ -1,9 +1,10 @@
 import React, {useState, useEffect, useMemo} from 'react';
-import axios from "axios/index";
+import axios from "../../../axios-pokemon";
 
 import PokemonData from "./data/PokemonData";
 import PokemonStat from "./data/PokemonStat";
 import {TYPE_COLORS} from '../../../shared/utility'
+import withErrorHandler from '../../../error/withErrorHandler';
 
 
 const PokemonDetails = (props) => {
@@ -27,7 +28,7 @@ const PokemonDetails = (props) => {
         url:''
     });
     useEffect(() => {
-        const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${props.match.params.pokemonIndex}`;
+        const pokemonUrl = `pokemon/${props.match.params.pokemonIndex}`;
 
         async function fetchPokemonDetails() {
             await axios
@@ -113,10 +114,14 @@ const PokemonDetails = (props) => {
     }, [props.match.params.pokemonIndex]);
 
   return (
-      <div className='col'>
-          <div className="card ">
-              <div className="card-header">
-                  <div className="row">
+      <div className='col-md-5'  >
+          <div className="card overflow-auto" style={{
+              position: 'fixed',
+              top: '9%',
+              bottom: 0,
+              width: '40%', }} >
+              <div className="card-header"   >
+                  <div className="row" >
                       <div className="col-5">
                           <h5>{ props.match.params.pokemonIndex }</h5>
                       </div>
@@ -136,7 +141,8 @@ const PokemonDetails = (props) => {
                                           .split('-')
                                           .map(s => s.charAt(0)
                                               .toUpperCase() + s.substring(1))
-                                          .join(" ") }
+                                          .join(" ")
+                                      }
                                   </span>
                               )) }
                           </div>
@@ -161,4 +167,4 @@ const PokemonDetails = (props) => {
   );
 };
 
-export default PokemonDetails;
+export default withErrorHandler(PokemonDetails, axios);

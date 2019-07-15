@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import classes from './PokemonEvolution.module.css';
 
 const PokemonEvolution = props => {
     const [pokemonEvo, setPokemonEvo] = useState({
@@ -42,6 +43,7 @@ const PokemonEvolution = props => {
                         evolve = evolve.evolves_to[0];
                     }while (!!evolve && evolve.hasOwnProperty('evolves_to'));
                 });
+            console.log(evoChains);
             setPokemonEvo({
                 evoChains
             })
@@ -51,62 +53,114 @@ const PokemonEvolution = props => {
     }, [props.url]);
     return (
 
-        <div className="card-body">
+        <div className="card-body" >
             <h5 className="card-title text-center">
                 Evolution Information
             </h5>
-            <div className="row">
-                { pokemonEvo.evoChains.map(chain => (
-                    <div className={`col-md-3 col-sm-3 mb-6`}  key={chain.species_name}>
-                        <div className="card">
-                            <div className="card-header">
-                                #{chain.species_url}
-                            </div>
-                            <img className="card-img-top rounded mx-auto mt-2" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${chain.species_url}.png`} alt={chain.species_name} />
-                            <div className="card-body">
-                                <h5 className="card-title">{chain.species_name.toLowerCase()
+            <div className="row" style={{ height : '400px'}}>
+                { pokemonEvo.evoChains.map((chain, index, arr) => (
+                    <React.Fragment key={chain.species_name}>
+                       {/* {console.log(arr[index===arr.length-1?0:index+1].extra)}*/}
+                {(chain.extra) ? (
+                    <React.Fragment>
+                    <div className={classes.item}>
+                        <div>
+                            <img width={2} className="card-img-top rounded mx-auto mt-2" src="https://static.thenounproject.com/png/143046-200.png" alt={chain.species_name} />
+                            <p>
+                                { arr[index===arr.length-1?0:index+1].trigger_name.toLowerCase()
+                                    .split('-')
+                                    .map(s => s.charAt(0)
+                                        .toUpperCase() + s.substring(1))
+                                    .join(" ")
+                                } {
+                                (
+                                    Object.keys(arr[index===arr.length-1?0:index+1].item).length !== 0)
+                                    ? arr[index===arr.length-1?0:index+1]
+                                        .item.name
+                                        .toLowerCase()
+                                        .split('-')
+                                        .map(s => s.charAt(0)
+                                            .toUpperCase() + s.substring(1))
+                                        .join(" ")
+                                    : null
+                            }
+                            </p>
+                        </div>
+                        <div>&nbsp;</div>
+                        <div>
+                            <img width={2} className="card-img-top rounded mx-auto mt-2" src="https://static.thenounproject.com/png/143042-200.png" alt={chain.species_name} />
+                            <p className="card-title">
+                                { chain.trigger_name.toLowerCase()
+                                    .split('-')
+                                    .map(s => s.charAt(0)
+                                        .toUpperCase() + s.substring(1))
+                                    .join(" ")
+                                }
+                            </p>
+                        </div>
+                    </div>
+                        <div className={classes.item}>
+                            <div>
+                                <img className="card-img-top rounded mx-auto mt-2" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${chain.species_url}.png`} alt={arr[index===arr.length-1?0:index+1].species_name} />
+                                <h5 className="card-title">{arr[index===arr.length-1?0:index+1].species_name.toLowerCase()
                                     .split(' ')
                                     .map(s => s.charAt(0).toUpperCase() + s.substring(1))
                                     .join(' ') }
                                 </h5>
-                                <p className="card-text">Evolution is a key part of the Pokémon games. Evolving Pokémon makes them stronger and often gives them a wider movepool.</p>
-                                <ul className="list-group">
-                                    {(chain.min_level !== null)?(
-                                        <li className="list-group-item d-flex justify-content-between align-items-center">
-                                            Level
-                                            <span className="badge badge-primary badge-pill">{chain.min_level}</span>
-                                        </li>
-                                    ): null}
-                                    {(chain.trigger_name !== null)?(
-                                        <li className="list-group-item d-flex justify-content-between align-items-center">
-                                            Trigger
-                                            <span className="badge badge-success badge-pill">
-                                        {chain.trigger_name.toLowerCase()
-                                            .split('-')
-                                            .map(s => s.charAt(0)
-                                                .toUpperCase()+ s.substring(1))
-                                            .join(" ")}
-                                    </span>
-                                        </li>
-                                    ): null}
-                                    {(chain.item !== null)?(
-                                        <li className="list-group-item d-flex justify-content-between align-items-center">
-                                            Item
-                                            <span className="badge badge-info badge-pill">{
-                                                chain.item.name.toLowerCase()
-                                                    .split('-')
-                                                    .map(s => s.charAt(0)
-                                                        .toUpperCase()+ s.substring(1))
-                                                    .join(" ")
-                                            }</span>
-                                        </li>
-                                    ): null}
-                                </ul>
+                            </div>
+                            <div>&nbsp;</div>
+                            <div>
+                                <img className="card-img-top rounded mx-auto mt-2" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${chain.species_url}.png`} alt={chain.species_name} />
+                                <h5 className="card-title">{
+                                    chain.species_name.toLowerCase()
+                                        .split(' ')
+                                        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                                        .join(' ')
+                                }
+                                </h5>
                             </div>
                         </div>
-                    </div>
+                    </React.Fragment>
 
+                    ) : (
+                    <React.Fragment>
+                        {
+                            ((index !== arr.length - 1) || !arr[index===0?arr.length-1:index-1].extra) ? (
+                                <div className={classes.item}>
+                                    <div>
+                                        <img className="card-img-top rounded mx-auto mt-2" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${chain.species_url}.png`} alt={chain.species_name} />
+                                        <h5 className="card-title">{chain.species_name.toLowerCase()
+                                            .split(' ')
+                                            .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                                            .join(' ') }
+                                        </h5>
+                                    </div>
+                                </div>
+                            ) : null
+                        }
+
+                        {
+                            ((index === arr.length - 1) || arr[index===arr.length-1?0:index+1].extra) ? null :
+                                (
+                                    <div className={classes.item}>
+                                        {console.log(arr[index===arr.length-1?0:index+1].extra)}
+                                        <div>
+                                            <img width={2} className="card-img-top rounded mx-auto mt-2" src="https://static.thenounproject.com/png/13487-200.png" alt={chain.species_name} />
+                                            <p className="card-title">
+                                                { chain.trigger_name
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                )
+                        }
+
+                    </React.Fragment>
+                )}
+                    </React.Fragment>
                 )) }
+
+
             </div>
         </div>
     )

@@ -1,0 +1,15 @@
+.item {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+    width: 13%;
+}
+
+.item > div {
+    width: 90%;
+    height: 120px;
+    margin: auto;
+}
+
+
