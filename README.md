@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/infinitypaul/findyourservive/master/public/images/logo.png" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/infinitypaul/pokemon/master/public/pokemon.png" /></p>
 <p align="center">This web app allows you to find your favourite pokemon.</p>
 <p align="center"><a href="https://instagram.com/infinitypaul">Creator</a> | <a href="">Getting Started</a></p>
 
