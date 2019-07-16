@@ -4,7 +4,7 @@ import pokemonContext from '../../../context/pokemonContext';
 
 import PokemonCard from './card/PokemonCard'
 import Filtering from "./filter/filtering";
-import Pagination from "../../../container/layout/Pagination";
+import Pagination from "../../../container/layout/Pagination/Pagination";
 
 const PokemonList = ( props ) => {
     const [pokemons, setPokeMon] = useState('');
@@ -19,14 +19,13 @@ const PokemonList = ( props ) => {
                 results : result.data.results
             };
             setPokeMon(pokemons);
-            console.log(props.location.search);
         })
     }
      useEffect(() => {
          if(!props.location.search){
              fetchPokemon();
          }
-    }, []);
+    }, [props.location.search]);
     const typeHandler = (event) => {
          let typeProp = event.target.value.toLowerCase();
          if(typeProp === 'all'){
@@ -36,7 +35,7 @@ const PokemonList = ( props ) => {
         async function fetchPokemonType() {
             await axios.get('type/'+typeProp).then((result)=>{
                 let pokemons = {
-                    count : result.data.pokemon.length,
+                    count : null,
                     next:null,
                     previous:null,
                     results : []
@@ -64,7 +63,10 @@ const PokemonList = ( props ) => {
                     ),
                     [pokemons, pokemonCon]
                 )}
-                <Pagination next={pokemons.next} previous={pokemons.previous} onClick={fetchPokemon} {...props}/>
+                { pokemons.count !== null ? (
+                    <Pagination next={pokemons.next} previous={pokemons.previous} onClick={fetchPokemon} {...props}/>
+                ) : null}
+
             </div>
         </React.Fragment>
     );

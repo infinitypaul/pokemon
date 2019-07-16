@@ -9,7 +9,11 @@ const PokeBoard = (props) => {
     const mouseEnterHandler = (pokemonIndex) => {
         const formalUrl = props.location.pathname.split('/')[props.location.pathname.split('/').length - 1];
         if(formalUrl !== pokemonIndex){
-            props.history.replace('/pokemon/'+pokemonIndex);
+            props.history.push();
+            props.history.push({
+                pathname: '/pokemon/'+pokemonIndex,
+                search: props.location.search ?  props.location.search : null
+            })
         }
     };
     return <div className="row">
