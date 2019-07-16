@@ -19,11 +19,13 @@ const PokemonList = ( props ) => {
                 results : result.data.results
             };
             setPokeMon(pokemons);
+            console.log(props.location.search);
         })
     }
      useEffect(() => {
-
-         fetchPokemon();
+         if(!props.location.search){
+             fetchPokemon();
+         }
     }, []);
     const typeHandler = (event) => {
          let typeProp = event.target.value.toLowerCase();

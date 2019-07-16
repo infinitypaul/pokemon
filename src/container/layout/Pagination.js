@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 
 const Pagination = props => {
     const paginateHandler = (url) => {
         props.history.replace('?'+url);
-        props.onClick(url)
     };
+    useEffect(() => {
+        console.log('meeed');
+        const url = props.location.search.split('?');
+        if(props.location.search){
+            props.onClick(url[1]+'?'+url[2]);
+            console.log(url)
+        }
+    }, [props.location.search]);
     return <React.Fragment>
         <ul className="pagination">
             <li className={"page-item" + (props.previous === null ? ' disabled' : null) }>
