@@ -29,12 +29,9 @@ npm start
 ```
 
 
-
-> Project Overview:
-
 ## Project Overview
 
-This app is made in react with react hooks. At the initial load we fetch list of all possible pokemons well paginated, on hover on the pokemon card, the details are displayed on the right hand side, likewise on click, the move list and evolution of the pokemon will be displayed ..
+This app is made in react with react hooks. At the initial load we fetch list of all possible pokemons well paginated, on hover on the pokemon card, the pokemon details are displayed on the right hand side, likewise on click, the move list and evolution of the pokemon will be displayed ..
 
 
 ## Folder Walkthrough
@@ -62,7 +59,3 @@ This app is made in react with react hooks. At the initial load we fetch list of
  
 
 Enjoy!
-
-### License
-
-The  Find Your Service App is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

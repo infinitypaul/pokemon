@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bfded7c-7244-44c3-8d02-ff865662c8c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,8 +53,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="335">
-                <caret line="47" column="86" selection-start-line="47" selection-start-column="86" selection-end-line="47" selection-end-column="86" />
+              <first_editor relative-caret-position="910">
+                <caret line="33" column="161" selection-start-line="33" selection-start-column="161" selection-end-line="33" selection-end-column="161" />
               </first_editor>
               <second_editor />
             </state>
@@ -276,7 +275,7 @@
               <item name="pokemon" type="b2602c69:ProjectViewProjectNode" />
               <item name="pokemon" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="context" type="462c0819:PsiDirectoryNode" />
+              <item name="error" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -367,24 +366,24 @@
       <workItem from="1561488506946" duration="969000" />
       <workItem from="1561493764422" duration="89773000" />
       <workItem from="1562932416249" duration="8000" />
-      <workItem from="1562932436342" duration="32251000" />
+      <workItem from="1562932436342" duration="32503000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123001000" />
+    <option name="totallyTimeSpent" value="123253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="npm" order="0" sideWeight="0.5086806" side_tool="true" weight="0.2074392" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49131945" visible="true" weight="0.2074392" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49131945" visible="true" weight="0.2074392" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" />
       <window_info anchor="bottom" id="RNConsole" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" sideWeight="0.49928468" visible="true" weight="0.26810673" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" sideWeight="0.49928468" visible="true" weight="0.26810673" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.5007153" side_tool="true" weight="0.32923833" />
       <window_info anchor="bottom" id="Database Changes" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
@@ -692,16 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/error/withErrorHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hooks/http-error-handler.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -719,11 +708,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/error/withErrorHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="335">
-            <caret line="47" column="86" selection-start-line="47" selection-start-column="86" selection-end-line="47" selection-end-column="86" />
+          <first_editor relative-caret-position="910">
+            <caret line="33" column="161" selection-start-line="33" selection-start-column="161" selection-end-line="33" selection-end-column="161" />
           </first_editor>
           <second_editor />
         </state>
